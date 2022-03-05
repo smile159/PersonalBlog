@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--引入thymeleaf命名空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文件上传</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <div>
+        用户名:<input type="text" name="uname">
+        密码：<input type="text" name="pass">
+        头像(最多一张)：<input type="file" name="headimg">
+        壁纸：<input type="file" name="wallpaper" multiple>
+        <input type="submit" value="提交">
+    </div>
+</form>
+</body>
+</html>
