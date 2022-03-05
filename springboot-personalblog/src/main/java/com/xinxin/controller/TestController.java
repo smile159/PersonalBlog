@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/getData")
     public String test(){
+        int a = 10/0;
         return "这是后端发送过来的数据";
     }
+
 }
