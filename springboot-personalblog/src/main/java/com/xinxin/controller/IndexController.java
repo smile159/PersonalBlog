@@ -48,4 +48,9 @@ public class IndexController {
         }
 
     }
+
+    @GetMapping("/upload")
+    public String uploadPage(){
+        return "upload";
+    }
 }
