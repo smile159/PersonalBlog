@@ -16,10 +16,14 @@ class SpringbootPersonalblogApplicationTests {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    DataSource dataSource;
+
     @Test
     void contextLoads() {
         Long aLong = jdbcTemplate.queryForObject("select count(*) from department", Long.class);
         log.info("查询到的记录条数为：{}",aLong);
+        log.info("数据源为：{}",dataSource.getClass());
     }
 
 }
