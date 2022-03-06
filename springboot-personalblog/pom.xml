@@ -13,21 +13,23 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-personalblog</name>
     <description>Demo project for Spring Boot</description>
+    <!--自定义依赖版本-->
     <properties>
         <java.version>1.8</java.version>
+        <!--<mysql.version>5.1.46</mysql.version>-->
+    <!--    可能是因为springboot的版本太高，mysql的版本太低导致报错-->
     </properties>
     <dependencies>
-        <!--devtools热部署-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-            <scope>true</scope>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
