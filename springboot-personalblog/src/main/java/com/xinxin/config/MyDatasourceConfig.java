@@ -15,7 +15,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-@Configuration
+@Deprecated
+//@Configuration
 public class MyDatasourceConfig {
 
 
