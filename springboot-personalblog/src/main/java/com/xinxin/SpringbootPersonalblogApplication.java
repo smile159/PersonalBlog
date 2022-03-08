@@ -1,6 +1,7 @@
 package com.xinxin;
 
 import com.xinxin.bean.Stu;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
@@ -8,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
+@MapperScan("com.xinxin.mapper")
 public class SpringbootPersonalblogApplication {
 
     public static void main(String[] args) {

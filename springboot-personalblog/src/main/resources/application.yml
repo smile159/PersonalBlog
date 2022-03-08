@@ -1,4 +1,7 @@
 spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
   datasource:
 #    serverTimezone=Asia/Shanghai
 #    url: jdbc:mysql://127.0.0.1:3306/lx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&userSSL=false
@@ -33,3 +36,4 @@ stu:
 mybatis:
 #  config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+

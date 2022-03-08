@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
-
-@Mapper
+//有了MapperScan就不用写Mapper
+//@Mapper
 public interface MeTagMapper {
     public MeTag getMeTag(Long id);
 
