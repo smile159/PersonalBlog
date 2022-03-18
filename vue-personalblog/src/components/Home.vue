@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%;height: 100px;">
+  <div>
     <!--回到顶部-->
     <el-backtop :bottom="60" style="width: 70px;height: 70px">
       <div
@@ -23,7 +23,7 @@
         <!--导航栏-->
         <Header/>
       </el-header>
-      <div class="manContainer">
+      <div>
         <el-main class="el-main">
           <!--显示的内容-->
           <Main/>
@@ -70,11 +70,6 @@ export default {
 
 .el-divider--horizontal {
   margin: 0 !important;
-}
-
-.manContainer {
-  height: 100vh;
-  /*overflow-x: scroll;*/
 }
 
 </style>

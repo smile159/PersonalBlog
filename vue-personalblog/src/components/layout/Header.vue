@@ -39,9 +39,9 @@
         <el-menu-item index="2-1">写文章</el-menu-item>
         <el-menu-item index="2-2">个人空间</el-menu-item>
         <el-menu-item index="2-3">我的收藏</el-menu-item>
-        <el-menu-item index="2-3">我的点赞</el-menu-item>
-        <el-menu-item index="2-3">浏览历史</el-menu-item>
-        <el-menu-item index="2-3">退出</el-menu-item>
+        <el-menu-item index="2-4">我的点赞</el-menu-item>
+        <el-menu-item index="2-5">浏览历史</el-menu-item>
+        <el-menu-item index="2-6">退出</el-menu-item>
       </el-submenu>
 
 
