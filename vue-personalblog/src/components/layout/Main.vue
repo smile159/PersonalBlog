@@ -35,6 +35,18 @@
         <h2>下午好</h2>
         <p>今日无事发生</p>
       </el-card>
+      <!--放一些标签，可以跳转的-->
+      <el-card class="all-tag">
+        <el-tag>Java</el-tag>
+        <el-tag>Python</el-tag>
+        <el-tag>Go</el-tag>
+        <el-tag>C</el-tag>
+        <el-tag>C++</el-tag>
+        <el-tag>C#</el-tag>
+        <el-tag>win32</el-tag>
+        <el-tag>php</el-tag>
+        <el-tag>android studio</el-tag>
+      </el-card>
     </div>
   </div>
 </template>
@@ -168,6 +180,7 @@ li {
 }
 
 .box-title a {
+  display: block;
   font-size: 18px;
   text-decoration: none;
   color: #333333;
@@ -181,6 +194,7 @@ li {
 }
 
 .box-content a {
+  display: block;
   font-size: 14px;
   text-decoration: none;
   color: #86909c;
@@ -201,19 +215,37 @@ li {
 }
 
 
+/*通知栏盒子*/
 .box-notification {
   width: 400px;
   height: 200px;
-  background-color: pink;
+  /*background-color: pink;*/
   margin-right: 150px;
 }
 
+/*根据时间出现的上午好、下午好、晚上好*/
 .box-notification h2 {
   padding: 10px 20px;
 }
 
+/*服务器发来的一些通知*/
 .box-notification p {
   padding: 10px 20px;
+}
+
+/*装标签的盒子*/
+.all-tag {
+  width: 400px;
+  height: 300px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+/*盒子里面的标签*/
+.all-tag .el-tag {
+  margin: 10px 0;
+  margin-left: 6px;
+  margin-right: 5px;
 }
 
 

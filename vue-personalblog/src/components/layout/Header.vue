@@ -32,7 +32,7 @@
           class="user-head"
           popper-class="user-item"
       >
-        <template slot="title">
+        <template slot="title" style="color: #fff">
           <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
           <span class="user-name">smileya</span>
         </template>
