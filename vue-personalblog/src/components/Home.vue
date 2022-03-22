@@ -21,12 +21,12 @@
     <el-container>
       <el-header>
         <!--导航栏-->
-        <Header/>
+        <Header :userInfo="userinfo"></Header>
       </el-header>
       <div>
         <el-main class="el-main">
           <!--显示的内容-->
-          <Main/>
+          <Main :userInfo="userinfo"></Main>
         </el-main>
       </div>
 
@@ -36,6 +36,8 @@
 
 
 <script>
+//库
+import axios from "axios"
 
 //模块
 import Header from "@/components/layout/Header";
@@ -45,7 +47,19 @@ export default {
   name: "Home",
   components: {Header, Main},
   data() {
-    return {}
+    return {
+      //定义用户的数据
+      userinfo: {name:"xiaoxin",age:18}
+    }
+  },
+  mounted() {
+    //测试axios是否正常
+  //   axios.get("http://localhost:8080/test").then(response =>{
+  //     console.log("请求成功!!!",response)
+  //   },error => {
+  //     console.log("请求失败！！！",error)
+  //   }
+  // )
   }
 }
 </script>
