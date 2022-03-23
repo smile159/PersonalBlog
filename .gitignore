@@ -5,4 +5,4 @@
 /springboot-personalblog/mvnw.cmd
 /springboot-personalblog/springboot-personalblog.iml
 /springboot-personalblog/.gitignore
-/springboot-personalblog/target/
+/springboot-personalblog/target/**
