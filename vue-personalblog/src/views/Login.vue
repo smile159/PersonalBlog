@@ -29,22 +29,30 @@
           <el-input
               placeholder="请输入用户名"
               prefix-icon="el-icon-user"
-              v-model="loginData.u">
+              v-model="registerData.u"
+              :validate-event="true"
+          >
           </el-input>
           <el-input
               placeholder="请输入密码"
               prefix-icon="el-icon-lollipop"
-              v-model="loginData.p">
+              :show-password="true"
+              v-model="registerData.p">
           </el-input>
           <el-input
               placeholder="请确认密码"
               prefix-icon="el-icon-lollipop"
-              v-model="loginData.p">
+              :show-password="true"
+              v-model="registerData.cp">
           </el-input>
-          <el-button round class="loginBtn" @click="login">芝麻开门</el-button>
-          <div class="goLogin" @click="moveLoginDiv">没有账号？立即注册</div>
+          <el-input
+              placeholder="请输入邮箱"
+              prefix-icon="iconfont icon-youxiang"
+              v-model="registerData.e">
+          </el-input>
+          <el-button round class="loginBtn">打开新世界大门</el-button>
+          <div class="goLogin" @click="moveLoginDiv">已有账号？立即登录</div>
         </div>
-
       </el-card>
     </div>
   </div>
@@ -53,15 +61,22 @@
 <script>
 //库
 import axios from "axios";
-
-
+import '../assets/icon/iconfont.css';
 export default {
   name: "Login",
   data() {
     return {
+      // 用户登录的数据
       loginData: {
         u: "",
         p: ""
+      },
+      // 用户注册的数据
+      registerData:{
+        u:"",
+        p:"",
+        cp:"",
+        e:""
       },
       remember: false,
       loginClass:['name_pass'],
@@ -110,6 +125,7 @@ export default {
 </script>
 
 <style scoped>
+
 /*背景-渐变色*/
 #bj {
   width: 100%;
