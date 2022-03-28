@@ -1,8 +1,11 @@
 server:
+#  服务端口
   port: 8080
 mybatis:
+#  mapper映射文件
   mapper-locations: classpath:mybatis/mapper/*.xml
 spring:
+#  数据源配置
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/pb?useUnicode=true&characterEncoding=utf-8
     username: root

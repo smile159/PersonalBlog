@@ -35,14 +35,14 @@
       <!--用户头像和昵称-->
       <el-submenu
           index="6"
-          class="user-head"
-          popper-class="user-item"
+          class="loginUser-head"
+          popper-class="loginUser-item"
           v-if="isLogin"
       >
         <template>
           <template slot="title" style="color: #fff">
             <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-            <span class="user-name">smileya</span>
+            <span class="loginUser-name">smileya</span>
           </template>
           <el-menu-item index="2-1">写文章</el-menu-item>
           <el-menu-item index="2-2">个人空间</el-menu-item>
@@ -54,7 +54,7 @@
       </el-submenu>
       <el-menu-item
           index="/login"
-          class="user-head"
+          class="loginUser-head"
           v-if="!isLogin"
       >
       未登录
@@ -100,16 +100,16 @@ export default {
   width: 100%;
 }
 
-.el-menu-item + .user-head {
+.el-menu-item + .loginUser-head {
   font-size: 16px;
   float: right;
 }
 
-.user-name {
+.loginUser-name {
   padding: 0 5px 0 10px;
 }
 
-.user-item .el-menu-item {
+.loginUser-item .el-menu-item {
   /*margin-left: 15px;*/
 }
 </style>

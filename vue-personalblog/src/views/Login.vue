@@ -7,19 +7,20 @@
             <h2 class="title">登录</h2>
             <el-input
                 placeholder="请输入手机号 / 用户名 / 邮箱"
-                prefix-icon="el-icon-user"
+                prefix-icon="el-icon-loginUser"
                 v-model="loginData.u">
             </el-input>
             <el-input
                 placeholder="请输入密码"
                 prefix-icon="el-icon-lollipop"
+                :show-password=true
                 v-model="loginData.p">
             </el-input>
             <div>
-              <el-checkbox v-model="remember" label="1" class="remember-user">记住我</el-checkbox>
+              <el-checkbox v-model="remember" label="1" class="remember-loginUser">记住我</el-checkbox>
               <a href="#" class="lost-pass">忘记密码？</a>
             </div>
-            <el-button round class="loginBtn" @click="login">芝麻开门</el-button>
+            <el-button round class="loginBtn" @click="toLogin">芝麻开门</el-button>
             <div class="goRegister" @click="moveRegisterDiv">没有账号？立即注册</div>
           </div>
 
@@ -28,7 +29,7 @@
           <h2 class="title">注册</h2>
           <el-input
               placeholder="请输入用户名"
-              prefix-icon="el-icon-user"
+              prefix-icon="el-icon-loginUser"
               v-model="registerData.u"
               :validate-event="true"
           >
@@ -50,7 +51,7 @@
               prefix-icon="iconfont icon-youxiang"
               v-model="registerData.e">
           </el-input>
-          <el-button round class="loginBtn">打开新世界大门</el-button>
+          <el-button round class="loginBtn" @click="toRegister">打开新世界大门</el-button>
           <div class="goLogin" @click="moveLoginDiv">已有账号？立即登录</div>
         </div>
       </el-card>
@@ -68,8 +69,8 @@ export default {
     return {
       // 用户登录的数据
       loginData: {
-        u: "",
-        p: ""
+        u: "smile",
+        p: "123456"
       },
       // 用户注册的数据
       registerData:{
@@ -85,7 +86,7 @@ export default {
   },
   methods: {
     //用户登录
-    login() {
+    toLogin() {
       // 数据校验
       if (this.loginData.u === "") {
         this.$message.error("用户名不能为空")
@@ -100,7 +101,7 @@ export default {
         u:this.loginData.u,
         p:this.loginData.p
       }).then(res => {
-        if (res.data.status === "1"){
+        if (res.data.status === 1){
           this.$message.success(res.data.msg)
         }else {
           this.$message.error(res.data.msg)
@@ -108,6 +109,21 @@ export default {
       },err =>{
         console.log("err = ",err)
       })
+    },
+    toRegister(){
+      axios.post("http://127.0.0.1:8080/register",{
+        rName:this.registerData.u,
+        rPass:this.registerData.p,
+        rePass:this.registerData.cp,
+        email:this.registerData.e
+      }).then(
+          res =>{
+            this.$message.success(res.data.msg)
+          },
+          err =>{
+            console.log("注册错误,err = ",err)
+          }
+      )
     },
     moveRegisterDiv(){
       this.loginClass.push("switch_register")
@@ -197,7 +213,7 @@ export default {
   border-color: transparent;
 }
 
-.name_pass .remember-user {
+.name_pass .remember-loginUser {
   margin-top: 20px;
 }
 

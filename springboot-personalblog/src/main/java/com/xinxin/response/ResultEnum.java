@@ -1,7 +1,7 @@
 package com.xinxin.response;
 
 // 定义统一全局的API返回代码
-public enum ApiResponseEnum {
+public enum ResultEnum {
     //内部定义枚举
     REJECT(2,"拒绝请求"),
     SUCCESS(1,"请求成功"),
@@ -11,7 +11,7 @@ public enum ApiResponseEnum {
     Integer code;
     String msg;
 
-    ApiResponseEnum(Integer code,String msg){
+    ResultEnum(Integer code, String msg){
         this.code = code;
         this.msg = msg;
     }
