@@ -112,9 +112,9 @@ export default {
     },
     toRegister(){
       axios.post("http://127.0.0.1:8080/register",{
-        rName:this.registerData.u,
-        rPass:this.registerData.p,
-        rePass:this.registerData.cp,
+        name:this.registerData.u,
+        password:this.registerData.p,
+        rPass:this.registerData.cp,
         email:this.registerData.e
       }).then(
           res =>{

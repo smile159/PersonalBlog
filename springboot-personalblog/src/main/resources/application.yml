@@ -4,6 +4,9 @@ server:
 mybatis:
 #  mapper映射文件
   mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
 spring:
 #  数据源配置
   datasource:

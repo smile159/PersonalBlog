@@ -13,24 +13,24 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterLogin {
+public class RegisterUser {
 
     //用户名/昵称
-    @Length(min = 1,max = 8)
-    @NotBlank
-    String rName;
+    @Length(min = 1,max = 8,message = "用户长度必须在1-8之间")
+    @NotBlank(message = "不能为空，并且至少一个长度")
+    String name;
     //用户名密码
     @Length(min = 1,max = 20)
     @NotBlank
-    String rPass;
+    String password;
     //用户名确认密码
     @Length(min = 1,max = 20)
     @NotBlank
-    String rePass;
+    String rPass;
     //用户邮箱
     @Length(min = 1,max = 15)
     @NotBlank
-    @Email
+    @Email(message = "请输入正确的邮箱")
     String email;
 
 
