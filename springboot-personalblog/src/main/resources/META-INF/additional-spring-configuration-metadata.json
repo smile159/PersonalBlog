@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "rsa.key.pubKeyPath",
+      "type": "java.lang.String",
+      "description": "Description for rsa.key.pubKeyPath."
+  }
+] }

@@ -14,3 +14,9 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level: com/xinxin/mapper:deubg
+rsa:
+  key:
+    pubKeyPath: F:\auth_key\id_key_rsa.pub
+    priKeyPath: F:\auth_key\id_key_rsa
