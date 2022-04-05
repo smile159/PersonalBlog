@@ -3,7 +3,12 @@ package com.xinxin.controller;
 
 import com.xinxin.bean.vo.LoginUser;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 @RestController
 public class HelloController {
@@ -14,5 +19,12 @@ public class HelloController {
     @GetMapping("/test")
     public LoginUser test(){
         return new LoginUser("smile", "123456");
+    }
+
+
+    @PostMapping("/test2")
+    public void test2(HttpServletRequest request, HttpServletResponse response){
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        System.out.println("test2收到了数据："+request.getParameter("region"));
     }
 }

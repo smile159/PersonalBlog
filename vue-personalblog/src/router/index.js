@@ -4,13 +4,28 @@ import VueRouter from 'vue-router'
 //自定义组件
 import Home from "@/components/Home";
 import Login from "@/views/Login";
+import Test from "@/components/Test";
+import Main from "@/components/layout/Main";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/',
-    component:Home
+    component:Home,
+    redirect:"/main",
+    children:[
+      {
+        path:"test",
+        name:"test",
+        component:Test
+      },
+      {
+        path:"main",
+        name:"main",
+        component: Main
+      }
+    ]
   },
   {
     path: "/login",
@@ -19,7 +34,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })

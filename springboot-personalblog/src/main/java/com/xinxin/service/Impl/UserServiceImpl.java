@@ -1,11 +1,10 @@
-package com.xinxin.service.impl;
+package com.xinxin.service.Impl;
 
-import cn.hutool.log.Log;
+import com.xinxin.bean.SysUser;
 import com.xinxin.bean.User;
 import com.xinxin.bean.vo.RegisterUser;
 import com.xinxin.mapper.UserMapper;
 import com.xinxin.service.UserService;
-import com.xinxin.utils.DateTimeUtils;
 import com.xinxin.utils.RequestLogUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -25,6 +24,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
+
     @Override
     public User queryUserById(String id) {
         return userMapper.queryUserById(id);
@@ -33,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User queryUserByName(String name) {
-        return userMapper.queryUserByName(name);
+        return userMapper.findUserByName(name);
     }
 
     /*
@@ -68,6 +72,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        User user = userMapper.queryUserByName(username);
+        SysUser result = new SysUser();
+        BeanUtils.copyProperties(result,user);
+        System.out.println("result = "+result);
+        return result;
     }
 }

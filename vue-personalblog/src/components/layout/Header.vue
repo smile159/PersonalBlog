@@ -9,7 +9,7 @@
         router
     >
       <!--网站图标-->
-      <el-menu-item index="1">
+      <el-menu-item index="/main">
         <a href="/">
           <img src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg"
                alt="稀土掘金" class="logo-img">
@@ -21,6 +21,7 @@
       <el-menu-item index="3">课程</el-menu-item>
       <!--占位的-->
       <el-menu-item index="4">直播</el-menu-item>
+
       <!--搜索框，搜索文章-->
       <el-menu-item index="5">
         <el-input
@@ -31,7 +32,7 @@
         >
         </el-input>
       </el-menu-item>
-
+      <el-menu-item index="/test">组件测试</el-menu-item>
       <!--用户头像和昵称-->
       <el-submenu
           index="6"

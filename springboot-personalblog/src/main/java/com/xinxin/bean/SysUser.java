@@ -19,7 +19,7 @@ import java.util.List;
 public class SysUser implements UserDetails {
 
     private Integer id;
-    private String username;
+    private String name;
     private String password;
     private Integer status;
     private List<SysRole> roles = new ArrayList<>();
@@ -39,7 +39,7 @@ public class SysUser implements UserDetails {
     @JsonIgnore
     @Override
     public String getUsername() {
-        return username;
+        return name;
     }
 
     //下面这四个方法是根据某些条件来判断用户是否可用，方便起见，可以直接设为true

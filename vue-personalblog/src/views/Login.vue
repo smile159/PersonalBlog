@@ -8,12 +8,14 @@
             <el-input
                 placeholder="请输入手机号 / 用户名 / 邮箱"
                 prefix-icon="el-icon-loginUser"
+                name="username"
                 v-model="loginData.u">
             </el-input>
             <el-input
                 placeholder="请输入密码"
                 prefix-icon="el-icon-lollipop"
                 :show-password=true
+                name="password"
                 v-model="loginData.p">
             </el-input>
             <div>

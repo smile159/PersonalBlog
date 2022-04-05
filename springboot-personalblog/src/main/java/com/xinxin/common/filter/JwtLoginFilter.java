@@ -42,6 +42,10 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {
+            String name = request.getParameter("username");
+            System.out.println("u = "+name);
+            Map<String, String[]> parameterMap = request.getParameterMap();
+            System.out.println(parameterMap);
             SysUser user = JSONObject.parseObject(request.getInputStream(),SysUser.class);
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -70,7 +74,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         SysUser sysUser = new SysUser();
-        sysUser.setUsername(authResult.getName());
+        sysUser.setName(authResult.getName());
         sysUser.setRoles((List<SysRole>) authResult.getAuthorities());
         String token = JwtUtils.generateTokenExpireInMinutes(sysUser,rsaKeyProperties.getPrivateKey(),24*60);
         response.addHeader("Authorization", "RobodToken " + token);	//将Token信息返回给用户

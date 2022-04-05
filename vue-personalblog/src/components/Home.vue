@@ -18,18 +18,18 @@
         UP
       </div>
     </el-backtop>
+    <!--容器-->
     <el-container>
+      <!--导航栏-->
       <el-header>
-        <!--导航栏-->
         <Header :userInfo="userinfo"></Header>
       </el-header>
-      <div>
-        <el-main class="el-main">
-          <!--显示的内容-->
-          <Main :userInfo="userinfo"></Main>
-        </el-main>
-      </div>
-
+      <!--主体内容-->
+      <el-main class="el-main">
+        <!--&lt;!&ndash;显示的内容&ndash;&gt;-->
+        <!--<Main :userInfo="userinfo"></Main>-->
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </div>
 </template>
@@ -49,17 +49,17 @@ export default {
   data() {
     return {
       //定义用户的数据
-      userinfo: {name:"xiaoxin",age:18}
+      userinfo: {name: "xiaoxin", age: 18}
     }
   },
   mounted() {
     //测试axios是否正常
-  //   axios.get("http://localhost:8080/test").then(response =>{
-  //     console.log("请求成功!!!",response)
-  //   },error => {
-  //     console.log("请求失败！！！",error)
-  //   }
-  // )
+    //   axios.get("http://localhost:8080/test").then(response =>{
+    //     console.log("请求成功!!!",response)
+    //   },error => {
+    //     console.log("请求失败！！！",error)
+    //   }
+    // )
   }
 }
 </script>
