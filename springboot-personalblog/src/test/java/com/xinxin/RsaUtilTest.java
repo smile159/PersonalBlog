@@ -1,7 +1,10 @@
 package com.xinxin;
 
+import com.xinxin.config.RsaKeyProperties;
 import com.xinxin.utils.RsaUtils;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @author smile
@@ -9,25 +12,17 @@ import org.junit.jupiter.api.Test;
  * @Description TODO
  * @createTime 2022年03月31日 16:07:00
  */
+@SpringBootTest
 public class RsaUtilTest {
 
-    private String privateFilePath = "F:\\auth_key\\id_key_rsa";
-    private String publicFilePath = "F:\\auth_key\\id_key_rsa.pub";
+    @Autowired
+    RsaKeyProperties rsaKeyProperties;
+
 
     @Test
-    public void generateKey() throws Exception {
-        RsaUtils.generateKey(publicFilePath,privateFilePath,"Smileya",2048);
+    public void test(){
+        System.out.println(rsaKeyProperties.getPublicKeyPath());
+        System.out.println(rsaKeyProperties.getPrivateKeyPath());
     }
-
-    @Test
-    public void getPublicKey() throws Exception {
-        System.out.println(RsaUtils.getPublicKey(publicFilePath));
-    }
-
-    @Test
-    public void getPrivateKey() throws Exception {
-        System.out.println(RsaUtils.getPrivateKey(privateFilePath));
-    }
-
 
 }

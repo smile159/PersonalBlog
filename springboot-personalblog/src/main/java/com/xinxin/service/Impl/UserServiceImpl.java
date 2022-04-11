@@ -1,6 +1,5 @@
 package com.xinxin.service.Impl;
 
-import com.xinxin.bean.SysUser;
 import com.xinxin.bean.User;
 import com.xinxin.bean.vo.RegisterUser;
 import com.xinxin.mapper.UserMapper;
@@ -9,8 +8,6 @@ import com.xinxin.utils.RequestLogUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -68,14 +65,5 @@ public class UserServiceImpl implements UserService {
         log.info("newUser = "+newUser);
         userMapper.registerNewUser(newUser);
         return true;
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userMapper.queryUserByName(username);
-        SysUser result = new SysUser();
-        BeanUtils.copyProperties(result,user);
-        System.out.println("result = "+result);
-        return result;
     }
 }

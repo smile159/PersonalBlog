@@ -4,5 +4,10 @@
       "name": "rsa.key.pubKeyPath",
       "type": "java.lang.String",
       "description": "Description for rsa.key.pubKeyPath."
-  }
-] }
+    },
+    {
+      "name": "rsa.pubKeyPath",
+      "type": "java.lang.String",
+      "description": "Description for rsa.pubKeyPath."
+    }
+  ] }

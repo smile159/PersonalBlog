@@ -1,7 +1,5 @@
 package com.xinxin.mapper;
 
-import com.xinxin.PersonalBlogApplication;
-import com.xinxin.bean.SysRole;
 import com.xinxin.bean.User;
 import org.apache.ibatis.annotations.*;
 
@@ -29,13 +27,5 @@ public interface UserMapper {
 
     @Insert("insert into user(name,password,email,phone,identity,portrait_img,create_time,activity_time,ip_address,status) values(#{name},#{password},#{email},#{phone},#{identity},#{portraitImg},#{createTime},#{activityTime},#{ipAddress},#{status}) ")
     public int registerNewUser(User user);
-
-
-
-    @Select("SELECT r.id, r.role_name roleName, r.role_desc roleDesc " +
-            "FROM sys_role r, sys_user_role ur " +
-            "WHERE r.id=ur.rid AND ur.uid=#{uid}")
-    public List<SysRole> findByUid(Integer uid);
-
 
 }

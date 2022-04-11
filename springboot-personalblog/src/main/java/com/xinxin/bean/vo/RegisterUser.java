@@ -25,7 +25,7 @@ public class RegisterUser {
     String password;
     //用户名确认密码
     @Length(min = 1,max = 20)
-    @NotBlank
+    //@NotBlank
     String rPass;
     //用户邮箱
     @Length(min = 1,max = 15)
